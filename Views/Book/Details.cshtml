@@ -1,0 +1,17 @@
+﻿@model Week9.ViewModels.BookViewModel
+@{
+    ViewData["Title"] = "Kitap Detayı";
+}
+
+<h1>Kitap Detayı</h1>
+
+<div class="details">
+    <p><strong>Başlık:</strong> @Model.Title</p>
+    <p><strong>Yazar:</strong> @Model.AuthorName</p>
+    <p><strong>Tür:</strong> @Model.Genre</p>
+    <p><strong>Yayın Tarihi:</strong> @Model.PublishDate.ToString("dd/MM/yyyy")</p>
+    <p><strong>ISBN:</strong> @Model.ISBN</p>
+    <p><strong>Mevcut Kopya:</strong> @Model.CopiesAvailable</p>
+</div>
+
+<a href="/Book/List" class="btn">Listeye Dön</a>

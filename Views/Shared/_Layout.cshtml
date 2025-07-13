@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kütüphane Yönetim Sistemi</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/" class="logo">Kütüphane Yönetim Sistemi</a>
+                <ul class="nav-links">
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/Home/About">Hakkında</a></li>
+                    <li><a href="/Book/List">Kitaplar</a></li>
+                    <li><a href="/Author/List">Yazarlar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <partial name="_Footer" />
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model List<Week9.ViewModels.BookViewModel>
+@{
+    ViewData["Title"] = "Kitaplar";
+}
+
+<h1>Kitaplar</h1>
+<a href="/Book/Create" class="btn">Yeni Kitap Ekle</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Yazar</th>
+            <th>Tür</th>
+            <th>Yayın Tarihi</th>
+            <th>ISBN</th>
+            <th>Mevcut Kopya</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.AuthorName</td>
+                <td>@book.Genre</td>
+                <td>@book.PublishDate.ToString("dd/MM/yyyy")</td>
+                <td>@book.ISBN</td>
+                <td>@book.CopiesAvailable</td>
+                <td>
+                    <a href="/Book/Details/@book.Id">Detay</a> |
+                    <a href="/Book/Edit/@book.Id">Düzenle</a> |
+                    <a href="/Book/Delete/@book.Id" onclick="return confirm('Silmek istediğinizden emin misiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

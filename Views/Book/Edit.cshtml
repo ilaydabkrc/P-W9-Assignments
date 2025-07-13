@@ -1,0 +1,48 @@
+﻿@model Week9.ViewModels.BookViewModel
+@{
+    ViewData["Title"] = "Kitap Düzenle";
+}
+
+<h1>Kitap Düzenle</h1>
+
+<form method="post">
+    <input asp-for="Id" type="hidden" />
+    
+    <div class="form-group">
+        <label asp-for="Title">Başlık:</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AuthorId">Yazar:</label>
+        <select asp-for="AuthorId" class="form-control">
+            @foreach (var author in ViewBag.Authors)
+            {
+                <option value="@author.Id">@author.FirstName @author.LastName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Genre">Tür:</label>
+        <input asp-for="Genre" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PublishDate">Yayın Tarihi:</label>
+        <input asp-for="PublishDate" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ISBN">ISBN:</label>
+        <input asp-for="ISBN" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CopiesAvailable">Mevcut Kopya:</label>
+        <input asp-for="CopiesAvailable" type="number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn">Güncelle</button>
+    <a href="/Book/List" class="btn">İptal</a>
+</form>

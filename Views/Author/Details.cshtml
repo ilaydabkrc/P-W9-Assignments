@@ -1,0 +1,15 @@
+﻿@model Week9.ViewModels.AuthorViewModel
+@{
+    ViewData["Title"] = "Yazar Detayı";
+}
+
+<h1>Yazar Detayı</h1>
+
+<div class="details">
+    <p><strong>Ad:</strong> @Model.FirstName</p>
+    <p><strong>Soyad:</strong> @Model.LastName</p>
+    <p><strong>Tam Ad:</strong> @Model.FullName</p>
+    <p><strong>Doğum Tarihi:</strong> @Model.DateOfBirth.ToString("dd/MM/yyyy")</p>
+</div>
+
+<a href="/Author/List" class="btn">Listeye Dön</a>
